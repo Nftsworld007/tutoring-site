@@ -44,6 +44,16 @@ html, body { overflow-x: hidden; }
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
 .header-inner {
   display: flex;
   align-items: center;
@@ -70,8 +80,9 @@ html, body { overflow-x: hidden; }
   padding: 0.15rem 0.45rem;
   border-radius: 999px;
 }
-.nav { display: flex; align-items: center; gap: 1.1rem; }
-.nav a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.95rem; }
+.nav { display: flex; align-items: center; gap: 0.85rem 1rem; flex-wrap: wrap; justify-content: flex-end; }
+.nav a { text-decoration: none; color: var(--ink); font-weight: 500; font-size: 0.92rem; }
+.nav a[aria-current="page"] { color: var(--blue); }
 .nav-cta {
   background: var(--blue);
   color: #fff !important;
@@ -170,6 +181,141 @@ html, body { overflow-x: hidden; }
 }
 .card h3 { margin: 0 0 0.4rem; font-size: 1.08rem; }
 .card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+.card ul, .buy-card ul, .price-card ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}
+.card li + li, .buy-card li + li, .price-card li + li { margin-top: 0.35rem; }
+
+.buy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.buy-card p { margin-top: 0.35rem; }
+.pill {
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #eef5ff;
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pill-human { background: #f3f0ff; color: #5336b8; }
+
+.notice {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 1rem 1.15rem;
+}
+.notice p { margin: 0; }
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.price-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.price-card.featured { border-color: #9ec0f0; box-shadow: var(--shadow); }
+.price-card h3 { margin: 0; font-size: 1.15rem; }
+.price-amount {
+  margin: 0.45rem 0 0.15rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.price-amount span { font-size: 1rem; font-weight: 500; color: var(--muted); }
+.price-renew { margin: 0 0 0.2rem; color: var(--ink); font-size: 0.92rem; }
+.price-card ul { flex: 1; margin-bottom: 1rem; }
+.price-card .btn { margin-top: auto; }
+
+.addon {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.addon p { margin: 0; }
+
+.screen {
+  margin-top: 0.9rem;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 0.75rem 0.8rem;
+}
+.screen p.screen-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.screen p.screen-q { margin: 0 0 0.45rem; color: var(--ink); font-size: 0.92rem; }
+.screen p.screen-opt {
+  margin: 0.3rem 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+}
+.screen p.screen-opt.dim { color: var(--muted); }
+.bar {
+  height: 8px;
+  background: #e4e9f0;
+  border-radius: 99px;
+  margin: 0.55rem 0 0.2rem;
+  overflow: hidden;
+}
+.bar span { display: block; height: 100%; background: var(--blue); border-radius: 99px; }
+.bar-label { margin: 0; font-size: 0.82rem; color: var(--muted); }
+
+.legal { padding: 2.5rem 0 4rem; }
+.legal-inner { max-width: 44rem; }
+.legal h1 { margin: 0 0 0.35rem; font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.03em; }
+.updated { color: var(--muted); margin-top: 0; }
+.legal h2 { font-size: 1.12rem; margin: 1.6rem 0 0.4rem; }
+.legal p, .legal li { color: var(--ink); }
+.legal ul { padding-left: 1.15rem; }
+.legal li + li { margin-top: 0.3rem; }
+
+.quote-form label.check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-weight: 500;
+}
+.quote-form label.check input {
+  width: 1.05rem;
+  min-height: 0;
+  margin-top: 0.2rem;
+  padding: 0;
+}
+
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+.footer-links a { font-weight: 650; }
 
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
 .steps li {
@@ -292,16 +438,42 @@ html, body { overflow-x: hidden; }
   font-size: 0.92rem;
 }
 .footer-inner p { margin: 0.2rem 0; }
+.site-footer address {
+  font-style: normal;
+  margin: 0.35rem 0 0.5rem;
+  line-height: 1.45;
+}
 .fine { font-size: 0.82rem; }
 
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-flex; align-items: center; min-height: 44px; }
+  .header-inner { position: relative; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 0.75rem 1rem 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+  .nav.is-open { display: flex; }
+  .nav a { padding: 0.55rem 0.2rem; }
+  .nav-cta { text-align: center; margin-top: 0.35rem; }
+}
+
 @media (max-width: 800px) {
-  .nav a:not(.nav-cta) { display: none; }
-  .hero-grid, .cards, .quotes, .quote-grid, .quote-form { grid-template-columns: 1fr; }
+  .hero-grid, .cards, .quotes, .quote-grid, .quote-form, .buy-grid, .price-grid { grid-template-columns: 1fr; }
   .hero { padding: 2rem 0 2.2rem; }
   .section { padding: 2.6rem 0; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; min-height: 48px; }
-  .nav-cta { min-height: 44px; display: inline-flex; align-items: center; }
+  .nav-cta { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .addon { flex-direction: column; align-items: stretch; }
 }
 
 @media (max-width: 480px) {
