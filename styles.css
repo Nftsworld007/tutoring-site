@@ -431,6 +431,58 @@ html, body { overflow-x: hidden; }
 .form-status.ok { color: #0f7b45; }
 .form-status.err { color: #b42318; }
 
+.login-main {
+  min-height: calc(100vh - 68px);
+  display: grid;
+  place-items: center;
+  padding: 2.5rem 1rem 3.5rem;
+  background:
+    radial-gradient(800px 320px at 10% 0%, #dcebff 0%, transparent 60%),
+    linear-gradient(#f8fbff, #ffffff);
+}
+.login-card {
+  width: min(420px, 100%);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.6rem 1.4rem 1.4rem;
+}
+.login-card h1 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+}
+.login-card .lede { margin: 0 0 1.2rem; font-size: 0.98rem; }
+.login-form { display: grid; gap: 0.85rem; }
+.login-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.login-form input {
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.75rem 0.8rem;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  width: 100%;
+}
+.login-form input:focus {
+  outline: 3px solid #cfe2ff;
+  border-color: var(--blue);
+}
+.login-error {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
 .site-footer {
   background: #0c1220;
   color: #c5cedb;
@@ -553,6 +605,15 @@ html, body { overflow-x: hidden; }
   .nav.is-open { display: flex; }
   .nav a { padding: 0.55rem 0.2rem; }
   .nav-cta { text-align: center; margin-top: 0.35rem; }
+  body.login-page .nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
 }
 
 @media (max-width: 800px) {

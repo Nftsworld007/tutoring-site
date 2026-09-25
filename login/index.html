@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Log in | Homework Guy</title>
+  <meta name="description" content="Log in to the Homework Guy learning portal." />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://homeworkguy.app/login" />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css?v=20260926c" />
+</head>
+<body class="login-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="Homework Guy home">
+        <img src="../assets/logo.svg" alt="" width="160" height="40" />
+        <span>Learning</span>
+      </a>
+      <nav class="nav" aria-label="Page">
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../index.html" class="nav-cta">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="login-main">
+    <section class="login-card" aria-labelledby="login-title">
+      <p class="eyebrow">Learning portal</p>
+      <h1 id="login-title">Log in</h1>
+      <p class="lede">Use the email and password for your Homework Guy portal.</p>
+      <form class="login-form" id="login-form" action="#" onsubmit="event.preventDefault(); document.getElementById('login-error').hidden = false; return false;">
+        <label>
+          Username
+          <input type="text" name="username" autocomplete="username" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <p class="login-error" id="login-error" role="alert" hidden>Incorrect username or password.</p>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var form = document.getElementById("login-form");
+      var error = document.getElementById("login-error");
+      if (!form || !error) return;
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        error.hidden = false;
+        return false;
+      });
+    })();
+  </script>
+</body>
+</html>
