@@ -1,5 +1,4 @@
 (function () {
-  var WHATSAPP = '14087094522';
   var EMAIL = 'support@homeworkguy.live';
 
   var toggle = document.querySelector('.nav-toggle');
@@ -62,7 +61,8 @@
     }
 
     var lines = [
-      'Hi, I would like HomeworkGuy access. I understand payment is on the website through Paddle, not in this chat.',
+      'Please set up the HomeworkGuy portal for this course.',
+      'I will complete payment at checkout on homeworkguy.app.',
       '',
       'Name: ' + name,
       'Email: ' + email,
@@ -73,9 +73,9 @@
       details
     ];
     var text = lines.join('\n');
-    var wa = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
+    var mailto = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Portal setup — ' + service) + '&body=' + encodeURIComponent(text);
 
-    window.open(wa, '_blank', 'noopener');
-    showStatus('WhatsApp should open with your plan filled in. If it does not, email ' + EMAIL + '. Do not send card details.', true);
+    window.location.href = mailto;
+    showStatus('Your email app should open with the course details. Payment is only at checkout on this website. Do not send card numbers.', true);
   });
 })();
