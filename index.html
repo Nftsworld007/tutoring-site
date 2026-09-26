@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20260925b" />
+  <link rel="stylesheet" href="styles.css?v=20260926d" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -313,10 +313,10 @@
         <div>
           <header class="section-head left">
             <h2>Set up your portal</h2>
-            <p>Tell us the plan and the course so the portal matches your subject. This form does not charge you. You pay at checkout on this website.</p>
+            <p>Tell us the plan and the course so the portal matches your subject. This form does not charge you.</p>
           </header>
           <ul class="quote-aside">
-            <li><strong>Support email</strong> <a href="mailto:support@homeworkguy.live">support@homeworkguy.live</a></li>
+            <li><strong>Support email</strong> <a href="mailto:support@homeworkguy.org">support@homeworkguy.org</a></li>
             <li><strong>Phone</strong> <a href="tel:+14087094522">+1 (408) 709-4522</a></li>
             <li><strong>Policies</strong> <a href="terms.html">Terms</a> · <a href="refunds.html">Refunds</a> · <a href="privacy.html">Privacy</a></li>
           </ul>
@@ -357,9 +357,13 @@
             <input type="checkbox" name="agree" value="yes" required />
             <span>I agree to the <a href="terms.html">Terms</a>, <a href="refunds.html">Refund Policy</a>, and <a href="privacy.html">Privacy Policy</a>.</span>
           </label>
-          <button type="submit" class="btn btn-primary btn-block">Email course details</button>
-          <p class="form-note">Opens an email to <a href="mailto:support@homeworkguy.live">support@homeworkguy.live</a>. Payment happens only at checkout on this website. Do not send card numbers.</p>
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary btn-block">Send request</button>
           <p class="form-status" id="form-status" role="status" hidden></p>
+          <div class="form-success" id="form-success" hidden>
+            <h3>Request sent</h3>
+            <p>We'll contact you back soon. A confirmation email is on its way to the address you entered.</p>
+          </div>
         </form>
       </div>
     </section>
@@ -423,6 +427,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260925b"></script>
+  <script src="script.js?v=20260926d"></script>
 </body>
 </html>

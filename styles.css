@@ -430,6 +430,23 @@ html, body { overflow-x: hidden; }
 .form-note, .form-status { grid-column: 1 / -1; margin: 0; font-size: 0.88rem; color: var(--muted); font-weight: 400; }
 .form-status.ok { color: #0f7b45; }
 .form-status.err { color: #b42318; }
+.quote-form.is-sent > :not(.form-success) { display: none; }
+.form-success {
+  grid-column: 1 / -1;
+  background: #eefbf3;
+  border: 1px solid #b7ebc9;
+  border-radius: 12px;
+  padding: 1.35rem 1.2rem;
+}
+.form-success h3 { margin: 0 0 0.35rem; color: #0f7b45; font-size: 1.25rem; }
+.form-success p { margin: 0; color: var(--ink); font-weight: 400; }
+.hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
 
 .login-main {
   min-height: calc(100vh - 68px);
