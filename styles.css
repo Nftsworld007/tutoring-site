@@ -243,6 +243,18 @@ html, body { overflow-x: hidden; }
 .price-renew { margin: 0 0 0.2rem; color: var(--ink); font-size: 0.92rem; }
 .price-card ul { flex: 1; margin-bottom: 1rem; }
 .price-card .btn { margin-top: auto; }
+.price-card-custom { grid-column: 1 / -1; }
+.price-card-custom .price-amount { font-size: 1.7rem; }
+.price-card-custom ul { margin-bottom: 0; }
+@media (min-width: 801px) {
+  .price-card-custom {
+    display: grid;
+    grid-template-columns: minmax(220px, 280px) 1fr auto;
+    column-gap: 2rem;
+    align-items: center;
+  }
+  .price-card-custom .btn { margin-top: 0; white-space: nowrap; }
+}
 
 .addon {
   margin-top: 1rem;
