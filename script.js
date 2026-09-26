@@ -1,5 +1,5 @@
 (function () {
-  var API = 'https://homework-guy-email-server.onrender.com/api/send-email';
+  var API = '/api/quote';
 
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
