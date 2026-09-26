@@ -122,7 +122,11 @@
         form.reset();
         form.classList.add('is-sent');
         var success = document.getElementById('form-success');
-        if (success) success.hidden = false;
+        if (success) {
+          var note = success.querySelector('p');
+          if (note) note.textContent = "We'll contact you back soon. A confirmation email was sent to " + email + ".";
+          success.hidden = false;
+        }
         statusEl.hidden = true;
       });
     }).catch(function () {
