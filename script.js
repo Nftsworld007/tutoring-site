@@ -60,7 +60,7 @@
       return;
     }
 
-    var honeypot = String(data.get('company') || '').trim();
+    var honeypot = String(data.get('hg_leave_blank') || '').trim();
     var instructions = [
       '[PORTAL REQUEST]',
       'Plan: ' + service,
