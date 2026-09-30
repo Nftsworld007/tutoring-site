@@ -130,7 +130,7 @@
         statusEl.hidden = true;
       });
     }).catch(function () {
-      showStatus('We could not send that. Please try again, or email support@homeworkguy.org.', false);
+      showStatus('We could not send that. Please try again, or email support@homeworkguy.live.', false);
     }).then(function () {
       if (button) button.disabled = false;
     });
